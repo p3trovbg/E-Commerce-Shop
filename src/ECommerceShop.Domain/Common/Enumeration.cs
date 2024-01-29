@@ -1,8 +1,8 @@
-﻿using System.Collections.Concurrent;
-using System.Reflection;
-
-namespace ECommerceShop.Domain.Common
+﻿namespace ECommerceShop.Domain.Common
 {
+    using System.Reflection;
+    using System.Collections.Concurrent;
+
     public abstract class Enumeration : IComparable
     {
         private static readonly ConcurrentDictionary<Type, IEnumerable<object>> EnumCache

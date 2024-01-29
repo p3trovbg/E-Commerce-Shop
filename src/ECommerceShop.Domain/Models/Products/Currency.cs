@@ -1,6 +1,6 @@
 ﻿namespace ECommerceShop.Domain.Models.Products
 {
-    using ECommerceShop.Domain.Common;
+    using Common;
 
     public class Currency : Enumeration
     {

@@ -1,6 +1,7 @@
 ﻿namespace ECommerceShop.Domain.Models.Products
 {
-    using ECommerceShop.Domain.Common;
+    using Common;
+
     internal class OriginCountryData : IInitialData
     {
         public Type EntityType => typeof(string);

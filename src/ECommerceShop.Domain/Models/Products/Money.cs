@@ -1,7 +1,7 @@
 ﻿namespace ECommerceShop.Domain.Models.Products
 {
-    using ECommerceShop.Domain.Common;
-    using ECommerceShop.Domain.Exceptions;
+    using Common;
+    using Exceptions;
 
     using static ModelConstants.Money;
 

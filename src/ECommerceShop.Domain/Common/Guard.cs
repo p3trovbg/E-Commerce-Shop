@@ -1,8 +1,7 @@
 ﻿namespace ECommerceShop.Domain.Common
 {
-    using ECommerceShop.Domain.Exceptions;
-    using ECommerceShop.Domain.Models;
-    using System.Runtime.CompilerServices;
+    using Models;
+    using Exceptions;
 
     public static class Guard
     {

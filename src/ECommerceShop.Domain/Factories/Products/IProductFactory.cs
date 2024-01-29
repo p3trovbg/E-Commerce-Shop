@@ -1,6 +1,6 @@
 ﻿namespace ECommerceShop.Domain.Factories.Products
 {
-    using ECommerceShop.Domain.Models.Products;
+    using Models.Products;
 
     public interface IProductFactory : IFactory<Product>
     {

@@ -1,7 +1,7 @@
-﻿using System.Reflection;
-
-namespace ECommerceShop.Domain.Common
+﻿namespace ECommerceShop.Domain.Common
 {
+    using System.Reflection;
+
     public abstract class ValueObject
     {
         private readonly BindingFlags privateBindingFlags =
