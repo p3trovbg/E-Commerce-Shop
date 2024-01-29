@@ -49,7 +49,56 @@
 
         public IReadOnlyCollection<Image> Images => this.images.ToList().AsReadOnly();
 
-        private void Validate(
+        public Product UpdateName(string name)
+        {
+            this.ValidateName(name);
+            this.Name = name;
+            return this;
+        }
+
+        public Product UpdateDescription(string description)
+        {
+            this.ValidateDescription(description);
+            this.Description = description;
+            return this;
+        }
+
+        public Product UpdateQuantity(int quantity)
+        {
+            this.ValidateQuantity(quantity);
+            this.Quantity = quantity;
+            return this;
+        }
+
+        public Product UpdateOrigin(string model, string code, string country, int year)
+        {
+            this.Origin = new Origin(model, code, country, year);
+            return this;
+        }
+
+        public Product UpdateMoney(decimal amount, Currency currency)
+        {
+            this.Money = new Money(amount, currency);
+            return this;
+        }
+
+        public Product UpdateMainImage(string path, string extension, int sizeInKilobytes)
+        {
+            this.MainImage = new Image(path, extension, sizeInKilobytes);
+            return this;
+        }
+
+        public Product UpdateCategory(string name, string description)
+        { 
+            this.Category = new Category(name, description);
+            return this;
+        }
+
+        public void AddReview(Review review) => this.reviews.Add(review);
+
+        public void AddImage(Image image) => this.images.Add(image);
+
+        private void Validate( 
             string name,
             string description,
             int quantity)
