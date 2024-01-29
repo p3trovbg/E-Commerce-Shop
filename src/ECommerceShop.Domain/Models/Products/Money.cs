@@ -14,9 +14,9 @@
             Currency = currency;
         }
 
-        public decimal Amount { get; set; }
+        public decimal Amount { get; private set; }
 
-        public Currency Currency { get; set; }
+        public Currency Currency { get; private set; }
 
         private void Validate(decimal amount)
             => Guard.AgainstOutOfRange<InvalidMoneyException>(
