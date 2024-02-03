@@ -1,9 +1,8 @@
-﻿namespace ECommerceShop.Domain.Exceptions
-{
-    public class InvalidOriginException : BaseDomainException
-    {
-        public InvalidOriginException() { }
+﻿namespace ECommerceShop.Domain.Exceptions;
 
-        public InvalidOriginException(string error) => this.Error = error;
-    }
+public class InvalidOriginException : BaseDomainException
+{
+    public InvalidOriginException() { }
+
+    public InvalidOriginException(string error) => this.Error = error;
 }

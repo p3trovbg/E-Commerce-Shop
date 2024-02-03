@@ -1,9 +1,8 @@
-﻿namespace ECommerceShop.Domain.Exceptions
-{
-    public class InvalidReviewException : BaseDomainException
-    {
-        public InvalidReviewException() { }
+﻿namespace ECommerceShop.Domain.Exceptions;
 
-        public InvalidReviewException(string error) => this.Error = error;
-    }
+public class InvalidReviewException : BaseDomainException
+{
+    public InvalidReviewException() { }
+
+    public InvalidReviewException(string error) => this.Error = error;
 }

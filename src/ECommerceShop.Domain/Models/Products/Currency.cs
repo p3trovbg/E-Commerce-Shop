@@ -1,20 +1,19 @@
-﻿namespace ECommerceShop.Domain.Models.Products
+﻿namespace ECommerceShop.Domain.Models.Products;
+
+using Common;
+
+public class Currency : Enumeration
 {
-    using Common;
+    public static readonly Currency BGN = new Currency(1, nameof(BGN));
+    public static readonly Currency USD = new Currency(2, nameof(USD));
 
-    public class Currency : Enumeration
+    private Currency(int value)
+        : this(value, FromValue<Currency>(value).Name)
     {
-        public static readonly Currency BGN = new Currency(1, nameof(BGN));
-        public static readonly Currency USD = new Currency(2, nameof(USD));
+    }
 
-        private Currency(int value)
-            : this(value, FromValue<Currency>(value).Name)
-        {
-        }
-
-        private Currency(int value, string name)
-            : base(value, name)
-        {
-        }
+    private Currency(int value, string name)
+        : base(value, name)
+    {
     }
 }

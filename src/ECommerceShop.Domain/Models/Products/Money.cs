@@ -1,28 +1,27 @@
-﻿namespace ECommerceShop.Domain.Models.Products
+﻿namespace ECommerceShop.Domain.Models.Products;
+
+using Common;
+using Exceptions;
+
+using static ModelConstants.Money;
+
+public class Money : ValueObject
 {
-    using Common;
-    using Exceptions;
-
-    using static ModelConstants.Money;
-
-    public class Money : ValueObject
+    internal Money(decimal amount, Currency currency)
     {
-        internal Money(decimal amount, Currency currency)
-        {
-            Validate(amount);
-            Amount = amount;
-            Currency = currency;
-        }
-
-        public decimal Amount { get; private set; }
-
-        public Currency Currency { get; private set; }
-
-        private void Validate(decimal amount)
-            => Guard.AgainstOutOfRange<InvalidMoneyException>(
-                amount,
-                MinAmount,
-                MaxAmount,
-                nameof(this.Amount));
+        Validate(amount);
+        Amount = amount;
+        Currency = currency;
     }
+
+    public decimal Amount { get; private set; }
+
+    public Currency Currency { get; private set; }
+
+    private void Validate(decimal amount)
+        => Guard.AgainstOutOfRange<InvalidMoneyException>(
+            amount,
+            MinAmount,
+            MaxAmount,
+            nameof(this.Amount));
 }
